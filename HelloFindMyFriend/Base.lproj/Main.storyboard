@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="syG-Lp-T9b">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="EMj-Wa-WPc"/>
+                                </connections>
+                            </mapView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3K2-LZ-vjk">
+                                <rect key="frame" x="103" y="458" width="51" height="31"/>
+                                <connections>
+                                    <action selector="locationSwitcher:" destination="BYZ-38-t0r" eventType="valueChanged" id="d6a-XQ-SvX"/>
+                                </connections>
+                            </switch>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IZd-Kb-CeA">
+                                <rect key="frame" x="20" y="56" width="230" height="29"/>
+                                <segments>
+                                    <segment title="無追蹤"/>
+                                    <segment title="追蹤"/>
+                                    <segment title="追蹤&amp;方向"/>
+                                </segments>
+                                <connections>
+                                    <action selector="trackingModeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="rtu-WD-unr"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7Jk-Vj-KTM">
+                                <rect key="frame" x="20" y="20" width="172" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="QDV-cB-YLO"/>
+                                    <constraint firstAttribute="width" constant="172" id="Wxw-bc-ZWC"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="標準"/>
+                                    <segment title="衛星"/>
+                                    <segment title="混合"/>
+                                    <segment title="軌跡"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mapTypeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="cKQ-zf-paT"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上傳位置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7j-on-sPg">
+                                <rect key="frame" x="20" y="463" width="75" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="BIv-VT-lXM"/>
+                                    <constraint firstAttribute="width" constant="75" id="DQd-2y-nVY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="尋找朋友" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkB-5H-eBh">
+                                <rect key="frame" x="20" y="514" width="75" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="5Eq-iN-TIo"/>
+                                    <constraint firstAttribute="height" constant="21" id="gV4-nw-myT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="raJ-Ou-uOI">
+                                <rect key="frame" x="103" y="509" width="51" height="31"/>
+                                <connections>
+                                    <action selector="findFriendsSwitcher:" destination="BYZ-38-t0r" eventType="valueChanged" id="lZc-JG-VEg"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bkB-5H-eBh" secondAttribute="bottom" constant="65" id="1yx-16-0no"/>
+                            <constraint firstItem="B7j-on-sPg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3hE-vJ-kM4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="syG-Lp-T9b" secondAttribute="bottom" id="AlC-Ge-Giv"/>
+                            <constraint firstItem="3K2-LZ-vjk" firstAttribute="centerY" secondItem="B7j-on-sPg" secondAttribute="centerY" id="LpU-KD-6ES"/>
+                            <constraint firstItem="7Jk-Vj-KTM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QuE-aE-U07"/>
+                            <constraint firstItem="syG-Lp-T9b" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="R0X-NX-M7v"/>
+                            <constraint firstItem="IZd-Kb-CeA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="S9R-at-1rd"/>
+                            <constraint firstItem="7Jk-Vj-KTM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="UKl-th-6jf"/>
+                            <constraint firstItem="bkB-5H-eBh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WaX-u6-hmZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="syG-Lp-T9b" secondAttribute="trailing" constant="-20" id="ZUB-OT-toz"/>
+                            <constraint firstItem="bkB-5H-eBh" firstAttribute="top" secondItem="B7j-on-sPg" secondAttribute="bottom" constant="30" id="eg8-Lv-jXc"/>
+                            <constraint firstItem="raJ-Ou-uOI" firstAttribute="centerY" secondItem="bkB-5H-eBh" secondAttribute="centerY" id="gSp-yS-djK"/>
+                            <constraint firstItem="3K2-LZ-vjk" firstAttribute="leading" secondItem="B7j-on-sPg" secondAttribute="trailing" constant="8" symbolic="YES" id="m6v-hx-Zem"/>
+                            <constraint firstItem="3K2-LZ-vjk" firstAttribute="leading" secondItem="raJ-Ou-uOI" secondAttribute="leading" id="pmR-GO-Qc7"/>
+                            <constraint firstItem="syG-Lp-T9b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="vcI-Up-Km7"/>
+                            <constraint firstItem="IZd-Kb-CeA" firstAttribute="top" secondItem="7Jk-Vj-KTM" secondAttribute="bottom" constant="8" symbolic="YES" id="xo8-OF-0f9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mainMapView" destination="syG-Lp-T9b" id="OK8-Mz-bQs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="309"/>
+        </scene>
+    </scenes>
+</document>
